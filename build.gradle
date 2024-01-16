@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.3.9.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'Spring'
+    version = '0.0.1-SNAPSHOT'
+
+    java {
+        sourceCompatibility = '11'
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
