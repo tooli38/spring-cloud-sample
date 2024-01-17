@@ -1,10 +1,10 @@
-package spring.cloud;
+package spring.product;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SampleApplicationTests {
+class ProductApplicationTests {
 
     @Test
     void contextLoads() {
