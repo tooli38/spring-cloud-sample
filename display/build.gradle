@@ -3,6 +3,8 @@ dependencies {
     implementation (project(':utils'))
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.10.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.retry/spring-retry
+    implementation 'org.springframework.retry:spring-retry:1.2.5.RELEASE'
     compileOnly 'org.projectlombok:lombok:1.18.4'
     annotationProcessor 'org.projectlombok:lombok:1.18.4'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
