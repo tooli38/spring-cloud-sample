@@ -1,5 +1,6 @@
 package spring.display.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,7 +14,13 @@ public class DisplayServiceImpl implements DisplayService {
     }
 
     @Override
+    @HystrixCommand(fallbackMethod = "getProductItemFallback")
     public String getProductItem(String productId) {
         return restTemplate.getForObject("http://localhost:8082/products/" + productId, String.class);
+    }
+
+    public String getProductItemFallback(String productId, Throwable t) {
+        System.out.println("t = " + t);
+        return "[This Product is sold out :" + productId +  "]";
     }
 }
